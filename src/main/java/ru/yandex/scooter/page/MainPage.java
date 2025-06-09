@@ -80,6 +80,13 @@ public class MainPage {
         return answerElement.getText().trim();
     }
 
+    // Получить текст вопроса по индексу
+    public String getQuestionTextByIndex(int index) {
+        WebElement question = driver.findElement(questionLocators[index]);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", question);
+        return question.getText().trim();
+    }
+
 
     // Клик по верхней кнопке "Заказать"
     public void clickOrderButtonTop() {
